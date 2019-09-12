@@ -35,34 +35,57 @@ function getComputerChoice() {
         r[i] = document.getElementById("r"+i);
     }
     // Its first choice will be r[5]
-    if(r[5].innerText == "" )
-        r[5].innerText = "O"; 
+    if(r[5].innerText == "" )   
+    {
+        r[5].innerText = "O";
+        if((r[5].innerText == "O" )&&((r[1].innerText == "X" && r[9].innerText == "X") || (r[2].innerText == "X" && r[8].innerText == "X") || (r[3].innerText == "X" && r[7].innerText == "X") || (r[4].innerText == "X" && r[6].innerText == "X")))
+        {
+            // Random value without r[5]
+            if(r[1].innerText == "" && 0<=rand<=0.125 )
+                r[1].innerText = "O";
+            else if(r[2].innerText == "" && rand<=0.25 )
+                r[2].innerText = "O";
+            else if(r[3].innerText == "" && rand<=0.375 )
+                r[3].innerText = "O";
+            else if(r[4].innerText == "" && rand<=0.5 )
+                r[4].innerText = "O";
+
+            else if(r[6].innerText == "" && rand<=0.625 )
+                r[6].innerText = "O";
+            else if(r[7].innerText == "" && rand<=0.75 )
+                r[7].innerText = "O";
+            else if(r[8].innerText == "" && rand<=0.875 )
+                r[8].innerText = "O";
+            else if(r[9].innerText == "" && rand<=1 ) 
+                r[9].innerText = "O";
+        }
+    } 
     // For two consecutiv values
-    else if((r[1].innerText == "" )&&((r[2].innerText == "X" && r[3].innerText == "X") || (r[5].innerText == "X" && r[9].innerText == "X") || (r[4].innerText == "X" && r[7].innerText == "X") || (r[2].innerText == "O" && r[3].innerText == "O") || (r[5].innerText == "O" && r[9].innerText == "O") || (r[4].innerText == "O" && r[7].innerText == "O")) )
+    else if((r[1].innerText == "" )&&((r[2].innerText == "O" && r[3].innerText == "O") || (r[5].innerText == "O" && r[9].innerText == "O") || (r[4].innerText == "O" && r[7].innerText == "O")||(r[2].innerText == "X" && r[3].innerText == "X") || (r[5].innerText == "X" && r[9].innerText == "X") || (r[4].innerText == "X" && r[7].innerText == "X") ) )
         r[1].innerText = "O";
 
-    else if((r[2].innerText == "" )&&((r[1].innerText == "X" && r[3].innerText == "X") || (r[5].innerText == "X" && r[8].innerText == "X") || (r[1].innerText == "O" && r[3].innerText == "O") || (r[5].innerText == "O" && r[8].innerText == "O")) )
+    else if((r[2].innerText == "" )&&((r[1].innerText == "O" && r[3].innerText == "O") || (r[5].innerText == "O" && r[8].innerText == "O")||(r[1].innerText == "X" && r[3].innerText == "X") || (r[5].innerText == "X" && r[8].innerText == "X") ) )
         r[2].innerText = "O";
 
-    else if((r[3].innerText == "" )&&((r[1].innerText == "X" && r[2].innerText == "X") || (r[5].innerText == "X" && r[7].innerText == "X") || (r[6].innerText == "X" && r[9].innerText == "X") || (r[1].innerText == "O" && r[2].innerText == "O") || (r[5].innerText == "O" && r[7].innerText == "O") || (r[6].innerText == "O" && r[9].innerText == "O")) )
+    else if((r[3].innerText == "" )&&((r[1].innerText == "O" && r[2].innerText == "O") || (r[5].innerText == "O" && r[7].innerText == "O") || (r[6].innerText == "O" && r[9].innerText == "O")||(r[1].innerText == "X" && r[2].innerText == "X") || (r[5].innerText == "X" && r[7].innerText == "X") || (r[6].innerText == "X" && r[9].innerText == "X") ) )
         r[3].innerText = "O";
 
-    else if((r[4].innerText == "" )&&((r[1].innerText == "X" && r[7].innerText == "X") || (r[5].innerText == "X" && r[6].innerText == "X") || (r[1].innerText == "O" && r[7].innerText == "O") || (r[5].innerText == "O" && r[6].innerText == "O")) )
+    else if((r[4].innerText == "" )&&((r[1].innerText == "O" && r[7].innerText == "O") || (r[5].innerText == "O" && r[6].innerText == "O")||(r[1].innerText == "X" && r[7].innerText == "X") || (r[5].innerText == "X" && r[6].innerText == "X") ) )
         r[4].innerText = "O";
 
-    else if((r[5].innerText == "" )&&((r[1].innerText == "X" && r[9].innerText == "X") || (r[2].innerText == "X" && r[8].innerText == "X") || (r[3].innerText == "X" && r[7].innerText == "X") || (r[4].innerText == "X" && r[6].innerText == "X") || (r[1].innerText == "O" && r[9].innerText == "O") || (r[2].innerText == "O" && r[8].innerText == "O") || (r[3].innerText == "O" && r[7].innerText == "O") || (r[4].innerText == "O" && r[6].innerText == "O")) )
+    else if((r[5].innerText == "" )&&((r[1].innerText == "O" && r[9].innerText == "O") || (r[2].innerText == "O" && r[8].innerText == "O") || (r[3].innerText == "O" && r[7].innerText == "O") || (r[4].innerText == "O" && r[6].innerText == "O")||(r[1].innerText == "X" && r[9].innerText == "X") || (r[2].innerText == "X" && r[8].innerText == "X") || (r[3].innerText == "X" && r[7].innerText == "X") || (r[4].innerText == "X" && r[6].innerText == "X") ) )
         r[5].innerText = "O";
 
-    else if((r[6].innerText == "" )&&((r[3].innerText == "X" && r[9].innerText == "X") || (r[4].innerText == "X" && r[5].innerText == "X") || (r[3].innerText == "O" && r[9].innerText == "O") || (r[4].innerText == "O" && r[5].innerText == "O")) )
+    else if((r[6].innerText == "" )&&((r[3].innerText == "O" && r[9].innerText == "O") || (r[4].innerText == "O" && r[5].innerText == "O")||(r[3].innerText == "X" && r[9].innerText == "X") || (r[4].innerText == "X" && r[5].innerText == "X") ) )
         r[6].innerText = "O";
 
-    else if((r[7].innerText == "" )&&((r[1].innerText == "X" && r[4].innerText == "X") || (r[3].innerText == "X" && r[5].innerText == "X") || (r[8].innerText == "X" && r[9].innerText == "X") || (r[1].innerText == "O" && r[4].innerText == "O") || (r[3].innerText == "O" && r[5].innerText == "O") || (r[8].innerText == "O" && r[9].innerText == "O")) )
+    else if((r[7].innerText == "" )&&((r[1].innerText == "O" && r[4].innerText == "O") || (r[3].innerText == "O" && r[5].innerText == "O") || (r[8].innerText == "O" && r[9].innerText == "O")||(r[1].innerText == "X" && r[4].innerText == "X") || (r[3].innerText == "X" && r[5].innerText == "X") || (r[8].innerText == "X" && r[9].innerText == "X") ) )
         r[7].innerText = "O";
 
-    else if((r[8].innerText == "" )&&((r[2].innerText == "X" && r[5].innerText == "X") || (r[7].innerText == "X" && r[9].innerText == "X") || (r[2].innerText == "O" && r[5].innerText == "O") || (r[7].innerText == "O" && r[9].innerText == "O")) )
+    else if((r[8].innerText == "" )&&((r[2].innerText == "O" && r[5].innerText == "O") || (r[7].innerText == "O" && r[9].innerText == "O")||(r[2].innerText == "X" && r[5].innerText == "X") || (r[7].innerText == "X" && r[9].innerText == "X") ) )
         r[8].innerText = "O";
 
-    else if((r[9].innerText == "" )&&((r[1].innerText == "X" && r[5].innerText == "X") || (r[3].innerText == "X" && r[6].innerText == "X") || (r[7].innerText == "X" && r[8].innerText == "X") || (r[1].innerText == "O" && r[5].innerText == "O") || (r[3].innerText == "O" && r[6].innerText == "O") || (r[7].innerText == "O" && r[8].innerText == "O")) )
+    else if((r[9].innerText == "" )&&((r[1].innerText == "O" && r[5].innerText == "O") || (r[3].innerText == "O" && r[6].innerText == "O") || (r[7].innerText == "O" && r[8].innerText == "O")||(r[1].innerText == "X" && r[5].innerText == "X") || (r[3].innerText == "X" && r[6].innerText == "X") || (r[7].innerText == "X" && r[8].innerText == "X") ) )
         r[9].innerText = "O";
 
     // For random value
